@@ -7,6 +7,9 @@ import { gsap } from "gsap";
 import { FloatingIcons } from "~/components/floating-icons";
 import SpotlightCard from "~/components/SpotlightCard";
 import ScrollReveal from "~/components/ScrollReveal";
+import LightPillar from "~/components/LightPillar";
+import RubcubeLogo from "~/../public/rubcube-logo.png";
+import RubbankCellphone from "~/../public/rubbank-cellphone.png";
 
 export function Welcome() {
   const [showLoading, setShowLoading] = useState(true);
@@ -113,7 +116,69 @@ export function Welcome() {
           </ScrollReveal>
         </div>
       </div>
-      <div className="flex relative h-[100dvh] overflow-hidden">
+      <div className="flex flex-col justify-top items-center relative py-20 overflow-hidden">
+        <LightPillar
+          topColor="#ec4899"
+          bottomColor="#3b82f6"
+          intensity={1}
+          rotationSpeed={0.3}
+          glowAmount={0.002}
+          pillarWidth={3}
+          pillarHeight={0.1}
+          noiseIntensity={0.5}
+          pillarRotation={25}
+          interactive={false}
+          mixBlendMode="screen"
+          quality="high"
+        />
+        <div className="flex flex-col gap-10 h-full w-full items-center justify-top px-60">
+          <h1 className="text-white text-4xl">Projects</h1>
+          <div className="relative flex flex-row gap-2 p-6 md:p-8 lg:p-20 w-full bg-[#6B7AE5] rounded-3xl overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center opacity-10">
+              <img src={RubcubeLogo} alt="Figma" className='rounded-sm' />
+            </div>
+            <div className="relative flex flex-col justify-center gap-4">
+              <div>
+                <h2 className="font-[900] text-[#1D1C3E] text-[clamp(64px,8vw,128px)] leading-[0.9]">RUB</h2>
+                <h2 className="font-[900] text-white text-[clamp(64px,8vw,128px)] leading-[0.9]">BANK</h2>
+              </div>
+                <p className="relative text-[clamp(14px,1.25vw,24px)] leading-[1.2] font-bold text-white">
+                Projeto de um banco digital completo, o RUB BANK foi criado em um bootcamp intensivo. Desenvolvi a solução de ponta a ponta: da API segura no backend ao aplicativo mobile com interface moderna, incluindo também a landing page de apresentação.
+                </p>
+            </div>
+            <img src={RubbankCellphone} alt="Rubbank Cellphone" className="relative w-[27.6vw] h-[59.07vh]" />
+          </div>
+          <div className="relative flex flex-row gap-2 p-6 md:p-8 lg:p-20 w-full bg-[#6B7AE5] rounded-3xl overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center opacity-10">
+              <img src={RubcubeLogo} alt="Figma" className='rounded-sm' />
+            </div>
+            <div className="relative flex flex-col justify-center gap-4">
+              <div>
+                <h2 className="font-[900] text-[#1D1C3E] text-[clamp(64px,8vw,128px)] leading-[0.9]">RUB</h2>
+                <h2 className="font-[900] text-white text-[clamp(64px,8vw,128px)] leading-[0.9]">BANK</h2>
+              </div>
+                <p className="relative text-[clamp(14px,1.25vw,24px)] leading-[1.2] font-bold text-white">
+                Projeto de um banco digital completo, o RUB BANK foi criado em um bootcamp intensivo. Desenvolvi a solução de ponta a ponta: da API segura no backend ao aplicativo mobile com interface moderna, incluindo também a landing page de apresentação.
+                </p>
+            </div>
+            <img src={RubbankCellphone} alt="Rubbank Cellphone" className="relative w-[27.6vw] h-[59.07vh]" />
+          </div>
+          <div className="relative flex flex-row gap-2 p-6 md:p-8 lg:p-20 w-full bg-[#6B7AE5] rounded-3xl overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center opacity-10">
+              <img src={RubcubeLogo} alt="Figma" className='rounded-sm' />
+            </div>
+            <div className="relative flex flex-col justify-center gap-4">
+              <div>
+                <h2 className="font-[900] text-[#1D1C3E] text-[clamp(64px,8vw,128px)] leading-[0.9]">RUB</h2>
+                <h2 className="font-[900] text-white text-[clamp(64px,8vw,128px)] leading-[0.9]">BANK</h2>
+              </div>
+                <p className="relative text-[clamp(14px,1.25vw,24px)] leading-[1.2] font-bold text-white">
+                Projeto de um banco digital completo, o RUB BANK foi criado em um bootcamp intensivo. Desenvolvi a solução de ponta a ponta: da API segura no backend ao aplicativo mobile com interface moderna, incluindo também a landing page de apresentação.
+                </p>
+            </div>
+            <img src={RubbankCellphone} alt="Rubbank Cellphone" className="relative w-[27.6vw] h-[59.07vh]" />
+          </div>
+        </div>
       </div>
     </main>
   );
