@@ -5,6 +5,7 @@ import { LoadingScreen } from "~/components/loading-screen";
 import { AnimatedText } from "~/components/animated-text";
 import { gsap } from "gsap";
 import { FloatingIcons } from "~/components/floating-icons";
+import SpotlightCard from "~/components/SpotlightCard";
 
 export function Welcome() {
   const [showLoading, setShowLoading] = useState(true);
@@ -72,8 +73,30 @@ export function Welcome() {
       </div>
       <div className="flex relative h-[100dvh] overflow-hidden">
         <FloatingIcons />
-        <div className="w-full">
-
+        <div className="w-full p-20 gap-10 flex flex-col">
+          <h1 className="text-white text-4xl">I specialize in</h1>
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
+            <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-3xl font-bold">Frontend Developer</h2>
+              <p className="text-lg leading-relaxed">
+                Desenvolvimento de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.              </p>
+            </div>
+          </SpotlightCard>
+          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
+            <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-3xl font-bold">Frontend Developer</h2>
+              <p className="text-lg leading-relaxed">
+                Desenvolvimento de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.              </p>
+            </div>
+          </SpotlightCard>
+                    <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
+            <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-3xl font-bold">Frontend Developer</h2>
+              <p className="text-lg leading-relaxed">
+                Desenvolvimento de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.              </p>
+            </div>
+          </SpotlightCard>
+          
         </div>
       </div>
     </main>
