@@ -6,6 +6,7 @@ import { AnimatedText } from "~/components/animated-text";
 import { gsap } from "gsap";
 import { FloatingIcons } from "~/components/floating-icons";
 import SpotlightCard from "~/components/SpotlightCard";
+import ScrollReveal from "~/components/ScrollReveal";
 
 export function Welcome() {
   const [showLoading, setShowLoading] = useState(true);
@@ -73,31 +74,46 @@ export function Welcome() {
       </div>
       <div className="flex relative h-[100dvh] overflow-hidden">
         <FloatingIcons />
-        <div className="w-full p-20 gap-10 flex flex-col">
-          <h1 className="text-white text-4xl">I specialize in</h1>
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
-            <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-3xl font-bold">Frontend Developer</h2>
-              <p className="text-lg leading-relaxed">
-                Desenvolvimento de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.              </p>
-            </div>
-          </SpotlightCard>
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
-            <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-3xl font-bold">Frontend Developer</h2>
-              <p className="text-lg leading-relaxed">
-                Desenvolvimento de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.              </p>
-            </div>
-          </SpotlightCard>
-                    <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
-            <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-3xl font-bold">Frontend Developer</h2>
-              <p className="text-lg leading-relaxed">
-                Desenvolvimento de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.              </p>
-            </div>
-          </SpotlightCard>
+        <div className="relative z-10 w-full p-20 gap-10 flex flex-col">
+          <ScrollReveal y={80} duration={0.8}>
+            <h1 className="text-white text-4xl">I specialize in</h1>
+          </ScrollReveal>
           
+          <ScrollReveal y={100} duration={1} delay={0.1}>
+            <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
+              <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
+                <h2 className="text-3xl md:text-3xl font-bold">Frontend Developer</h2>
+                <p className="text-lg leading-relaxed">
+                  Desenvolvimento de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.
+                </p>
+              </div>
+            </SpotlightCard>
+          </ScrollReveal>
+          
+          <ScrollReveal y={100} duration={1} delay={0.2}>
+            <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(32, 0, 230, 0.37)">
+              <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
+                <h2 className="text-3xl md:text-3xl font-bold">Backend & Database</h2>
+                <p className="text-lg leading-relaxed">
+                  Estruturo aplicações com arquitetura escalável, seguindo princípios de Clean Code, utilizando Prisma ORM e testes automatizados para garantir integrações confiáveis e manutenção eficiente.
+                </p>
+              </div>
+            </SpotlightCard>
+          </ScrollReveal>
+          
+          <ScrollReveal y={30} duration={1} delay={0.3}>
+            <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
+              <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
+                <h2 className="text-3xl md:text-3xl font-bold">UI/UX Designer</h2>
+                <p className="text-lg leading-relaxed">
+                  Desenho experiências centradas no usuário com prototipação ágil, aplicação das heurísticas de Nielsen, design system consistente e foco em responsividade mobile-first.
+                </p>
+              </div>
+            </SpotlightCard>
+          </ScrollReveal>
         </div>
+      </div>
+      <div className="flex relative h-[100dvh] overflow-hidden">
       </div>
     </main>
   );
