@@ -53,16 +53,48 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative rounded-3xl border border-neutral-800 bg-neutral-900 overflow-hidden ${className}`}
+      className={`relative rounded-3xl overflow-hidden ${className}`}
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
-        style={{
-          opacity,
-          background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`
-        }}
-      />
-      {children}
+      <div className="absolute inset-0 rounded-3xl" style={{ padding: '2px' }}>
+        <div 
+          className="absolute inset-0 rounded-3xl led-border"
+          style={{
+            background: 'conic-gradient(from var(--angle), #2000E6 0deg, #2000E6 90deg, #b7047e 180deg, #b7047e 270deg, #2000E6 360deg)',
+          }}
+        />
+        <div className="relative w-full h-full rounded-3xl bg-neutral-900" />
+      </div>
+      <div className="relative z-10">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
+          style={{
+            opacity,
+            background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`
+          }}
+        />
+        {children}
+      </div>
+
+      <style>{`
+        @property --angle {
+          syntax: '<angle>';
+          initial-value: 0deg;
+          inherits: false;
+        }
+
+        @keyframes rotateGradient {
+          0% {
+            --angle: 0deg;
+          }
+          100% {
+            --angle: 360deg;
+          }
+        }
+
+        .led-border {
+          animation: rotateGradient 10s linear infinite;
+        }
+      `}</style>
     </div>
   );
 };
