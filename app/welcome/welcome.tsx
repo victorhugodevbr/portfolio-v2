@@ -217,11 +217,11 @@ export function Welcome() {
           <div className="flex flex-row w-full">
             <div className="flex flex-col gap-2 w-full">
               <h2 className="text-white text-4xl">Faq</h2>
-              <h1 className="text-white text-6xl font-bold">Frequently Asked Questions</h1>
+              <h1 className="text-white text-6xl font-bold pr-10">Frequently Asked Questions</h1>
               <p className="text-white text-lg pr-10">
                 If you have any other questions, you can contact me by email{" "}
-                <a href="mailto:victorhugocsantos@hotmail.com" className="underline">
-                  victorhugocsantos@hotmail.com
+                <a href="mailto:victorhugovicentedev@hotmail.com" className="underline">
+                  victorhugovicentedev@hotmail.com
                 </a>
               </p>
             </div>
