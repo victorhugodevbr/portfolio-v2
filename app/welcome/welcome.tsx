@@ -226,42 +226,42 @@ export function Welcome() {
               </p>
             </div>
             <div className="flex flex-col gap-6 w-full">
-              <details className="bg-white rounded-lg p-6 cursor-pointer">
-                <summary className="font-bold text-lg list-none flex justify-between items-center">
-                  Você é designer ou desenvolvedor?
-                  <span className="text-2xl">▸</span>
-                </summary>
-                <p className="mt-4 text-gray-700">
-                  Sou um desenvolvedor com especialização em full-stack, mas meu maior diferencial é meu background em design UI/UX. Isso me dá uma visão mais técnica para o desenvolvimento front-end, pois consigo entender a lógica por trás da experiência do usuário.
-                </p>
-              </details>
-              <details className="bg-white rounded-lg p-6 cursor-pointer">
-                <summary className="font-bold text-lg list-none flex justify-between items-center">
-                  Como você gerencia um projeto desde a concepção (design UI/UX) até a implementação (desenvolvimento e deploy)?
-                  <span className="text-2xl">▸</span>
-                </summary>
-                <p className="mt-4 text-gray-700">
-                  Eu gerencio o projeto de ponta a ponta, unindo a visão de design à execução técnica. Começo com o levantamento de requisitos e a criação do design (UI/UX), depois defino a arquitetura e desenvolvo banco de dados, back-end e o front-end. Por fim, executo o deploy e garanto a manutenção, entregando uma solução coesa e completa.
-                </p>  
-              </details>
-              <details className="bg-white rounded-lg p-6 cursor-pointer">
-                <summary className="font-bold text-lg list-none flex justify-between items-center">
-                  Como você lida com mudanças de escopo durante um projeto?
-                  <span className="text-2xl">▸</span>
-                </summary>
-                <p className="mt-4 text-gray-700">
-                  Eu lido com mudanças de forma proativa. Analiso o impacto no projeto, discuto as opções com o desenvolvedor parceiro (quando tem), levo até o cliente e, em seguida, formalizo a decisão para garantir que as expectativas estejam sempre alinhadas.
-                </p>
-              </details>
-              <details className="bg-white rounded-lg p-6 cursor-pointer">
-                <summary className="font-bold text-lg list-none flex justify-between items-center">
-                  O que você considera um projeto bem-sucedido e como você mede o sucesso?
-                  <span className="text-2xl">▸</span>
-                </summary>
-                <p className="mt-4 text-gray-700">
-                  Para mim, um projeto bem-sucedido é aquele que resolve o problema do usuário, atinge os objetivos de negócio e tem alta qualidade técnica. Meço o sucesso através do impacto gerado e de métricas como a satisfação do usuário, resultados de negócio (KPIs) e a performance da aplicação.
-                </p>
-              </details>
+                <details className="bg-white rounded-lg p-6 cursor-pointer group">
+                  <summary className="font-bold text-lg list-none flex justify-between items-center">
+                    Você é designer ou desenvolvedor?
+                    <span className="text-2xl transition-transform group-open:rotate-90">▸</span>
+                  </summary>
+                  <p className="mt-4 text-gray-700">
+                    Sou um desenvolvedor com especialização em full-stack, mas meu maior diferencial é meu background em design UI/UX. Isso me dá uma visão mais técnica para o desenvolvimento front-end, pois consigo entender a lógica por trás da experiência do usuário.
+                  </p>
+                </details>
+                <details className="bg-white rounded-lg p-6 cursor-pointer group">
+                  <summary className="font-bold text-lg list-none flex justify-between items-center">
+                    Como você gerencia um projeto desde a concepção (design UI/UX) até a implementação (desenvolvimento e deploy)?
+                    <span className="text-2xl transition-transform group-open:rotate-90">▸</span>
+                  </summary>
+                  <p className="mt-4 text-gray-700">
+                    Eu gerencio o projeto de ponta a ponta, unindo a visão de design à execução técnica. Começo com o levantamento de requisitos e a criação do design (UI/UX), depois defino a arquitetura e desenvolvo banco de dados, back-end e o front-end. Por fim, executo o deploy e garanto a manutenção, entregando uma solução coesa e completa.
+                  </p>  
+                </details>
+                <details className="bg-white rounded-lg p-6 cursor-pointer group">
+                  <summary className="font-bold text-lg list-none flex justify-between items-center">
+                    Como você lida com mudanças de escopo durante um projeto?
+                    <span className="text-2xl transition-transform group-open:rotate-90">▸</span>
+                  </summary>
+                  <p className="mt-4 text-gray-700">
+                    Eu lido com mudanças de forma proativa. Analiso o impacto no projeto, discuto as opções com o desenvolvedor parceiro (quando tem), levo até o cliente e, em seguida, formalizo a decisão para garantir que as expectativas estejam sempre alinhadas.
+                  </p>
+                </details>
+                <details className="bg-white rounded-lg p-6 cursor-pointer group">
+                  <summary className="font-bold text-lg list-none flex justify-between items-center">
+                    O que você considera um projeto bem-sucedido e como você mede o sucesso?
+                    <span className="text-2xl transition-transform group-open:rotate-90">▸</span>
+                  </summary>
+                  <p className="mt-4 text-gray-700">
+                    Para mim, um projeto bem-sucedido é aquele que resolve o problema do usuário, atinge os objetivos de negócio e tem alta qualidade técnica. Meço o sucesso através do impacto gerado e de métricas como a satisfação do usuário, resultados de negócio (KPIs) e a performance da aplicação.
+                  </p>
+                </details>
             </div>
           </div>
           <div className="flex flex-row w-full items-center">
