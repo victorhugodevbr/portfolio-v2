@@ -9,12 +9,6 @@ import SpotlightCard from "~/components/SpotlightCard";
 import ScrollReveal from "~/components/ScrollReveal";
 import LightPillar from "~/components/LightPillar";
 import ProjectCard from "~/components/ProjectCard";
-import RubcubeLogo from "~/../public/rubcube-logo.png";
-import RubbankCellphone from "~/../public/rubbank-cellphone.png";
-import MaranataLogo from "~/../public/maranata-logo.png";
-import MaranataCellphone from "~/../public/maranata-cellphone.png";
-import BrasilcardLogo from "~/../public/brasilcard-logo.png";
-import BrasilcardCellphone from "~/../public/brasilcard-cellphone.png";
 import Waves from "~/components/Waves";
 
 export function Welcome() {
@@ -142,7 +136,7 @@ export function Welcome() {
           <h1 className="text-white text-4xl">Projetos</h1>
           <ProjectCard
             backgroundColor="#6B7AE5"
-            logo={RubcubeLogo}
+            logo="/rubcube-logo.png"
             logoOpacity={0.2}
             logoPosition={{ top: '-2.5rem', left: '-5rem' }}
             logoSize={{ width: '45rem', height: '45rem' }}
@@ -153,13 +147,13 @@ export function Welcome() {
             }}
             titleWeight={900}
             description="Projeto de um banco digital completo, o RUB BANK foi criado em um bootcamp intensivo. Desenvolvi a solução de ponta a ponta: da API segura no backend ao aplicativo mobile com interface moderna, incluindo também a landing page de apresentação."
-            phoneImage={RubbankCellphone}
+            phoneImage="/rubbank-cellphone.png"
             buttonColor="white"
             buttonTextColor="#6B7AE5"
           />
           <ProjectCard
             backgroundColor="#FFAA00"
-            logo={MaranataLogo}
+            logo="/maranata-logo.png"
             logoOpacity={0.3}
             logoPosition={{ top: '-12.5rem', left: '-20rem' }}
             logoSize={{ width: '60rem', height: '60rem' }}
@@ -175,13 +169,13 @@ export function Welcome() {
             }}
             titleWeight={700}
             description="Este é um projeto desenvolvido de ponta a ponta para a Maranata Church, criando uma plataforma digital para centralizar a comunicação e a organização da comunidade. Como único designer e desenvolvedor, fui responsável por todo o ciclo do produto, desde o levantamento de requisitos com o cliente até a implementação e entrega da solução completa."
-            phoneImage={MaranataCellphone}
+            phoneImage="/maranata-cellphone.png"
             buttonColor="white"
             buttonTextColor="#FFAA00"
           />
           <ProjectCard
             backgroundColor="#004B89"
-            logo={BrasilcardLogo}
+            logo="/brasilcard-logo.png"
             logoOpacity={0.2}
             logoPosition={{ top: '-10rem', left: '-11.25rem' }}
             logoSize={{ width: '62.5rem', height: '62.5rem' }}
@@ -192,7 +186,7 @@ export function Welcome() {
             titleFont="Roboto Slab"
             titleWeight={600}
             description="Participei como desenvolvedor frontend no projeto do aplicativo BrasilCard, uma plataforma completa para gerenciamento de cartões. Integrado a uma equipe de desenvolvimento, meu foco foi colaborar na construção da interface e da experiência do usuário."
-            phoneImage={BrasilcardCellphone}
+            phoneImage="/brasilcard-cellphone.png"
             buttonColor="white"
             buttonTextColor="#004B89"
           />
