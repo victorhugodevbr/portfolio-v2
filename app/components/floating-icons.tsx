@@ -1,12 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import FigmaIconImage from '~/../public/figma-icon.png'
-import FlutterIconImage from '~/../public/flutter-icon.png'
-import NestJsIconImage from '~/../public/nestjs-icon.png'
-import PhotoshopIconImage from '~/../public/photoshop-icon.png'
-import PostgreSQLIconImage from '~/../public/postgresql-icon.png'
-import ReactIconImage from '~/../public/react-icon.png'
-import TypeScriptIconImage from '~/../public/ts-icon.png'
 
 type FloatingIconProps = {
   children: React.ReactNode
@@ -59,37 +52,37 @@ function FloatingIcon({
 
 function FigmaIcon() {
   return (
-    <img src={FigmaIconImage} alt="Figma" className='rounded-sm' />
+    <img src="/figma-icon.png" alt="Figma" className='rounded-sm' />
   )
 }
 function PostgreSQLIcon() {
   return (
-    <img src={PostgreSQLIconImage} alt="PostgreSQL" className='rounded-sm' />
+    <img src="/postgresql-icon.png" alt="PostgreSQL" className='rounded-sm' />
   )
 }
 function ReactIcon() {
   return (
-    <img src={ReactIconImage} alt="React" className='rounded-sm' />
+    <img src="/react-icon.png" alt="React" className='rounded-sm' />
   )
 }
 function NestJSIcon() {
   return (
-    <img src={NestJsIconImage} alt="NestJS" className='rounded-sm' />
+    <img src="/nestjs-icon.png" alt="NestJS" className='rounded-sm' />
   )
 }
 function PhotoshopIcon() {
   return (
-    <img src={PhotoshopIconImage} alt="Photoshop" className='rounded-sm' />
+    <img src="/photoshop-icon.png" alt="Photoshop" className='rounded-sm' />
   )
 }
 function TypeScriptIcon() {
   return (
-    <img src={TypeScriptIconImage} alt="TypeScript" className='rounded-sm' />
+    <img src="/ts-icon.png" alt="TypeScript" className='rounded-sm' />
   )
 }
 function FlutterIcon() {
   return (
-    <img src={FlutterIconImage} alt="Flutter" className='rounded-sm' />
+    <img src="/flutter-icon.png" alt="Flutter" className='rounded-sm' />
   )
 }
 export function FloatingIcons() {
