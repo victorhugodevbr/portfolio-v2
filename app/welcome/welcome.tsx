@@ -216,7 +216,7 @@ export function Welcome() {
         <div className="relative z-20 w-full flex p-40 gap-10 flex flex-col">
           <div className="flex flex-row w-full">
             <div className="flex flex-col gap-2 w-full">
-              <h2 className="text-white text-4xl">Perguntas Frequentes</h2>
+              <h2 className="text-white text-4xl">FAQ</h2>
               <h1 className="text-white text-6xl font-bold pr-10">Dúvidas Comuns</h1>
               <p className="text-white text-lg pr-10">
                 Se você tiver outras dúvidas, pode me contatar por e-mail{" "}
