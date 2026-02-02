@@ -15,6 +15,7 @@ import MaranataLogo from "~/../public/maranata-logo.png";
 import MaranataCellphone from "~/../public/maranata-cellphone.png";
 import BrasilcardLogo from "~/../public/brasilcard-logo.png";
 import BrasilcardCellphone from "~/../public/brasilcard-cellphone.png";
+import Waves from "~/components/Waves";
 
 export function Welcome() {
   const [showLoading, setShowLoading] = useState(true);
@@ -136,7 +137,8 @@ export function Welcome() {
           mixBlendMode="screen"
           quality="high"
         />
-        <div className="flex flex-col gap-10 h-full w-full items-center justify-top px-60">
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none z-0" />
+        <div className="flex flex-col gap-10 h-full w-full items-center justify-top px-60 relative z-10">
           <h1 className="text-white text-4xl">Projects</h1>
           <ProjectCard
             backgroundColor="#6B7AE5"
@@ -194,6 +196,87 @@ export function Welcome() {
             buttonColor="white"
             buttonTextColor="#004B89"
           />
+        </div>
+      </div>
+      <div className="flex relative overflow-hidden">
+        <Waves
+          lineColor="#b70a7e"
+          backgroundColor="transparent"
+          waveSpeedX={0.0125}
+          waveSpeedY={0.01}
+          waveAmpX={40}
+          waveAmpY={20}
+          friction={0.9}
+          tension={0.05}
+          maxCursorMove={120}
+          xGap={12}
+          yGap={36}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
+        <div className="relative z-20 w-full flex p-40 gap-10 flex flex-col">
+          <div className="flex flex-row w-full">
+            <div className="flex flex-col gap-2 w-full">
+              <h2 className="text-white text-4xl">Faq</h2>
+              <h1 className="text-white text-6xl font-bold">Frequently Asked Questions</h1>
+              <p className="text-white text-lg pr-10">
+                If you have any other questions, you can contact me by email{" "}
+                <a href="mailto:victorhugocsantos@hotmail.com" className="underline">
+                  victorhugocsantos@hotmail.com
+                </a>
+              </p>
+            </div>
+            <div className="flex flex-col gap-6 w-full">
+              <details className="bg-white rounded-lg p-6 cursor-pointer">
+                <summary className="font-bold text-lg list-none flex justify-between items-center">
+                  Do you do web design or web development?
+                  <span className="text-2xl">▸</span>
+                </summary>
+                <p className="mt-4 text-gray-700">
+                  Community, free web design files creators have shared with the Community. Create templates for wireframes, UI kits, asset libraries, and design systems. Or share educational resources, interactive tutorials, and code to use across the design process.
+                </p>
+              </details>            
+              <details className="bg-white rounded-lg p-6 cursor-pointer">
+                <summary className="font-bold text-lg list-none flex justify-between items-center">
+                  Do you do web design or web development?
+                  <span className="text-2xl">▸</span>
+                </summary>
+              </details>
+              <details className="bg-white rounded-lg p-6 cursor-pointer">
+                <summary className="font-bold text-lg list-none flex justify-between items-center">
+                  Do you do web design or web development?
+                  <span className="text-2xl">▸</span>
+                </summary>
+              </details>
+              <details className="bg-white rounded-lg p-6 cursor-pointer">
+                <summary className="font-bold text-lg list-none flex justify-between items-center">
+                  Do you do web design or web development?
+                  <span className="text-2xl">▸</span>
+                </summary>
+              </details>
+            </div>
+          </div>
+          <div className="flex flex-row w-full items-center">
+            <div className="flex flex-col gap-4 w-full">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full bg-cover bg-center bg-black" style={{ backgroundImage: "url('/personal-image.png')" }} />
+                <p className="text-white text-4xl font-semibold">Let's build it together.</p>
+              </div>
+              <div className="flex gap-4">
+                <button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded flex items-center gap-3 hover:bg-white hover:text-black transition">
+                  My LinkedIn
+                  <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
+                </button>
+                <button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded flex items-center gap-3 hover:bg-white hover:text-black transition">
+                  Download my resume
+                  <img src="/icons/github.svg" alt="Github" className="w-6 h-6" />
+                </button>
+              </div>
+            </div>
+            <div className="bg-gradient-to-br from-[#B7047E] to-[#510238] rounded-lg py-20 text-center w-full border-2 border-white">
+              <h3 className="text-white text-4xl font-bold mb-2">Try me out, risk free!</h3>
+              <p className="text-white text-lg">Let's build something great together</p>
+            </div>
+          </div>
         </div>
       </div>
     </main>
