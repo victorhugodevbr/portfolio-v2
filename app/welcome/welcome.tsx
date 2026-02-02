@@ -8,8 +8,13 @@ import { FloatingIcons } from "~/components/floating-icons";
 import SpotlightCard from "~/components/SpotlightCard";
 import ScrollReveal from "~/components/ScrollReveal";
 import LightPillar from "~/components/LightPillar";
+import ProjectCard from "~/components/ProjectCard";
 import RubcubeLogo from "~/../public/rubcube-logo.png";
 import RubbankCellphone from "~/../public/rubbank-cellphone.png";
+import MaranataLogo from "~/../public/maranata-logo.png";
+import MaranataCellphone from "~/../public/maranata-cellphone.png";
+import BrasilcardLogo from "~/../public/brasilcard-logo.png";
+import BrasilcardCellphone from "~/../public/brasilcard-cellphone.png";
 
 export function Welcome() {
   const [showLoading, setShowLoading] = useState(true);
@@ -133,51 +138,62 @@ export function Welcome() {
         />
         <div className="flex flex-col gap-10 h-full w-full items-center justify-top px-60">
           <h1 className="text-white text-4xl">Projects</h1>
-          <div className="relative flex flex-row gap-2 p-6 md:p-8 lg:p-20 w-full bg-[#6B7AE5] rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center opacity-10">
-              <img src={RubcubeLogo} alt="Figma" className='rounded-sm' />
-            </div>
-            <div className="relative flex flex-col justify-center gap-4">
-              <div>
-                <h2 className="font-[900] text-[#1D1C3E] text-[clamp(64px,8vw,128px)] leading-[0.9]">RUB</h2>
-                <h2 className="font-[900] text-white text-[clamp(64px,8vw,128px)] leading-[0.9]">BANK</h2>
-              </div>
-                <p className="relative text-[clamp(14px,1.25vw,24px)] leading-[1.2] font-bold text-white">
-                Projeto de um banco digital completo, o RUB BANK foi criado em um bootcamp intensivo. Desenvolvi a solução de ponta a ponta: da API segura no backend ao aplicativo mobile com interface moderna, incluindo também a landing page de apresentação.
-                </p>
-            </div>
-            <img src={RubbankCellphone} alt="Rubbank Cellphone" className="relative w-[27.6vw] h-[59.07vh]" />
-          </div>
-          <div className="relative flex flex-row gap-2 p-6 md:p-8 lg:p-20 w-full bg-[#6B7AE5] rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center opacity-10">
-              <img src={RubcubeLogo} alt="Figma" className='rounded-sm' />
-            </div>
-            <div className="relative flex flex-col justify-center gap-4">
-              <div>
-                <h2 className="font-[900] text-[#1D1C3E] text-[clamp(64px,8vw,128px)] leading-[0.9]">RUB</h2>
-                <h2 className="font-[900] text-white text-[clamp(64px,8vw,128px)] leading-[0.9]">BANK</h2>
-              </div>
-                <p className="relative text-[clamp(14px,1.25vw,24px)] leading-[1.2] font-bold text-white">
-                Projeto de um banco digital completo, o RUB BANK foi criado em um bootcamp intensivo. Desenvolvi a solução de ponta a ponta: da API segura no backend ao aplicativo mobile com interface moderna, incluindo também a landing page de apresentação.
-                </p>
-            </div>
-            <img src={RubbankCellphone} alt="Rubbank Cellphone" className="relative w-[27.6vw] h-[59.07vh]" />
-          </div>
-          <div className="relative flex flex-row gap-2 p-6 md:p-8 lg:p-20 w-full bg-[#6B7AE5] rounded-3xl overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center opacity-10">
-              <img src={RubcubeLogo} alt="Figma" className='rounded-sm' />
-            </div>
-            <div className="relative flex flex-col justify-center gap-4">
-              <div>
-                <h2 className="font-[900] text-[#1D1C3E] text-[clamp(64px,8vw,128px)] leading-[0.9]">RUB</h2>
-                <h2 className="font-[900] text-white text-[clamp(64px,8vw,128px)] leading-[0.9]">BANK</h2>
-              </div>
-                <p className="relative text-[clamp(14px,1.25vw,24px)] leading-[1.2] font-bold text-white">
-                Projeto de um banco digital completo, o RUB BANK foi criado em um bootcamp intensivo. Desenvolvi a solução de ponta a ponta: da API segura no backend ao aplicativo mobile com interface moderna, incluindo também a landing page de apresentação.
-                </p>
-            </div>
-            <img src={RubbankCellphone} alt="Rubbank Cellphone" className="relative w-[27.6vw] h-[59.07vh]" />
-          </div>
+          <ProjectCard
+            backgroundColor="#6B7AE5"
+            logo={RubcubeLogo}
+            logoOpacity={0.2}
+            logoPosition={{ top: '-2.5rem', left: '-5rem' }}
+            logoSize={{ width: '45rem', height: '45rem' }}
+            logoRotation={19}
+            title={{
+              line1: { text: 'RUB', color: '#1D1C3E', size: 'clamp(64px,8vw,128px)' },
+              line2: { text: 'BANK', color: 'white', size: 'clamp(64px,8vw,128px)' },
+            }}
+            titleWeight={900}
+            description="Projeto de um banco digital completo, o RUB BANK foi criado em um bootcamp intensivo. Desenvolvi a solução de ponta a ponta: da API segura no backend ao aplicativo mobile com interface moderna, incluindo também a landing page de apresentação."
+            phoneImage={RubbankCellphone}
+            buttonColor="white"
+            buttonTextColor="#6B7AE5"
+          />
+          <ProjectCard
+            backgroundColor="#FFAA00"
+            logo={MaranataLogo}
+            logoOpacity={0.3}
+            logoPosition={{ top: '-12.5rem', left: '-20rem' }}
+            logoSize={{ width: '60rem', height: '60rem' }}
+            logoRotation={19}
+            title={{
+              line1: { text: 'MARANATA', color: '#191919', size: 'clamp(44px,6vw,96px)' },
+              line2: { 
+                text: 'CHURCH', 
+                color: '#FFAA00', 
+                size: 'clamp(24px,3vw,48px)',
+                style: { textShadow: '0px 0px clamp(10px, 0vw, 20px) rgba(0, 0, 0, 0.3)' }
+              },
+            }}
+            titleWeight={700}
+            description="Este é um projeto desenvolvido de ponta a ponta para a Maranata Church, criando uma plataforma digital para centralizar a comunicação e a organização da comunidade. Como único designer e desenvolvedor, fui responsável por todo o ciclo do produto, desde o levantamento de requisitos com o cliente até a implementação e entrega da solução completa."
+            phoneImage={MaranataCellphone}
+            buttonColor="white"
+            buttonTextColor="#FFAA00"
+          />
+          <ProjectCard
+            backgroundColor="#004B89"
+            logo={BrasilcardLogo}
+            logoOpacity={0.2}
+            logoPosition={{ top: '-10rem', left: '-11.25rem' }}
+            logoSize={{ width: '62.5rem', height: '62.5rem' }}
+            logoRotation={16}
+            title={{
+              line1: { text: 'BrasilCard', color: 'white', size: 'clamp(48px,6vw,96px)' },
+            }}
+            titleFont="Roboto Slab"
+            titleWeight={600}
+            description="Participei como desenvolvedor frontend no projeto do aplicativo BrasilCard, uma plataforma completa para gerenciamento de cartões. Integrado a uma equipe de desenvolvimento, meu foco foi colaborar na construção da interface e da experiência do usuário."
+            phoneImage={BrasilcardCellphone}
+            buttonColor="white"
+            buttonTextColor="#004B89"
+          />
         </div>
       </div>
     </main>
