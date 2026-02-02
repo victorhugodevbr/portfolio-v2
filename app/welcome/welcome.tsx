@@ -59,7 +59,7 @@ export function Welcome() {
             {showContent && (
               <>
                 <AnimatedText
-                  text="Hi, I am"
+                  text="Olá, eu sou"
                   className="font-bold text-white text-[clamp(40px,3.75vw,72px)] drop-shadow-[0_0_clamp(6px,1vw,12px)_white]"
                   delay={0.3}
                 />
@@ -69,7 +69,7 @@ export function Welcome() {
                   delay={0.9}
                 />
                 <AnimatedText
-                  text="Full Stack developer / UI & UX Designer"
+                  text="Desenvolvedor Full Stack / Designer UI & UX"
                   className="font-bold text-white text-[clamp(24px,2.1vw,40px)] drop-shadow-[0_0_clamp(2px,0.5vw,4px)_white]"
                   delay={1.5}
                 />
@@ -85,15 +85,15 @@ export function Welcome() {
         <FloatingIcons />
         <div className="relative z-10 w-full p-20 gap-10 flex flex-col">
           <ScrollReveal y={80} duration={0.8}>
-            <h1 className="text-white text-4xl">I specialize in</h1>
+            <h1 className="text-white text-4xl">Sou especializado em</h1>
           </ScrollReveal>
           
           <ScrollReveal y={100} duration={1} delay={0.1}>
             <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
               <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-3xl font-bold">Frontend Developer</h2>
+                <h2 className="text-3xl md:text-3xl font-bold">Desenvolvimento Frontend</h2>
                 <p className="text-lg leading-relaxed">
-                  Desenvolvimento de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.
+                  Implementação de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.
                 </p>
               </div>
             </SpotlightCard>
@@ -102,7 +102,7 @@ export function Welcome() {
           <ScrollReveal y={100} duration={1} delay={0.2}>
             <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(32, 0, 230, 0.37)">
               <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-3xl font-bold">Backend & Database</h2>
+                <h2 className="text-3xl md:text-3xl font-bold">Backend & Banco de Dados</h2>
                 <p className="text-lg leading-relaxed">
                   Estruturo aplicações com arquitetura escalável, seguindo princípios de Clean Code, utilizando Prisma ORM e testes automatizados para garantir integrações confiáveis e manutenção eficiente.
                 </p>
@@ -113,7 +113,7 @@ export function Welcome() {
           <ScrollReveal y={30} duration={1} delay={0.3}>
             <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
               <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-3xl font-bold">UI/UX Designer</h2>
+                <h2 className="text-3xl md:text-3xl font-bold">Designer UI/UX</h2>
                 <p className="text-lg leading-relaxed">
                   Desenho experiências centradas no usuário com prototipação ágil, aplicação das heurísticas de Nielsen, design system consistente e foco em responsividade mobile-first.
                 </p>
@@ -139,7 +139,7 @@ export function Welcome() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none z-0" />
         <div className="flex flex-col gap-10 h-full w-full items-center justify-top px-60 relative z-10">
-          <h1 className="text-white text-4xl">Projects</h1>
+          <h1 className="text-white text-4xl">Projetos</h1>
           <ProjectCard
             backgroundColor="#6B7AE5"
             logo={RubcubeLogo}
@@ -216,74 +216,74 @@ export function Welcome() {
         <div className="relative z-20 w-full flex p-40 gap-10 flex flex-col">
           <div className="flex flex-row w-full">
             <div className="flex flex-col gap-2 w-full">
-              <h2 className="text-white text-4xl">Faq</h2>
-              <h1 className="text-white text-6xl font-bold pr-10">Frequently Asked Questions</h1>
+              <h2 className="text-white text-4xl">Perguntas Frequentes</h2>
+              <h1 className="text-white text-6xl font-bold pr-10">Dúvidas Comuns</h1>
               <p className="text-white text-lg pr-10">
-                If you have any other questions, you can contact me by email{" "}
+                Se você tiver outras dúvidas, pode me contatar por e-mail{" "}
                 <a href="mailto:victorhugovicentedev@hotmail.com" className="underline">
                   victorhugovicentedev@hotmail.com
                 </a>
               </p>
             </div>
             <div className="flex flex-col gap-6 w-full">
-                <details className="bg-white rounded-lg p-6 cursor-pointer group">
-                  <summary className="font-bold text-lg list-none flex justify-between items-center">
-                    Você é designer ou desenvolvedor?
-                    <span className="text-2xl transition-transform group-open:rotate-90">▸</span>
-                  </summary>
-                  <p className="mt-4 text-gray-700">
-                    Sou um desenvolvedor com especialização em full-stack, mas meu maior diferencial é meu background em design UI/UX. Isso me dá uma visão mais técnica para o desenvolvimento front-end, pois consigo entender a lógica por trás da experiência do usuário.
-                  </p>
-                </details>
-                <details className="bg-white rounded-lg p-6 cursor-pointer group">
-                  <summary className="font-bold text-lg list-none flex justify-between items-center">
-                    Como você gerencia um projeto desde a concepção (design UI/UX) até a implementação (desenvolvimento e deploy)?
-                    <span className="text-2xl transition-transform group-open:rotate-90">▸</span>
-                  </summary>
-                  <p className="mt-4 text-gray-700">
-                    Eu gerencio o projeto de ponta a ponta, unindo a visão de design à execução técnica. Começo com o levantamento de requisitos e a criação do design (UI/UX), depois defino a arquitetura e desenvolvo banco de dados, back-end e o front-end. Por fim, executo o deploy e garanto a manutenção, entregando uma solução coesa e completa.
-                  </p>  
-                </details>
-                <details className="bg-white rounded-lg p-6 cursor-pointer group">
-                  <summary className="font-bold text-lg list-none flex justify-between items-center">
-                    Como você lida com mudanças de escopo durante um projeto?
-                    <span className="text-2xl transition-transform group-open:rotate-90">▸</span>
-                  </summary>
-                  <p className="mt-4 text-gray-700">
-                    Eu lido com mudanças de forma proativa. Analiso o impacto no projeto, discuto as opções com o desenvolvedor parceiro (quando tem), levo até o cliente e, em seguida, formalizo a decisão para garantir que as expectativas estejam sempre alinhadas.
-                  </p>
-                </details>
-                <details className="bg-white rounded-lg p-6 cursor-pointer group">
-                  <summary className="font-bold text-lg list-none flex justify-between items-center">
-                    O que você considera um projeto bem-sucedido e como você mede o sucesso?
-                    <span className="text-2xl transition-transform group-open:rotate-90">▸</span>
-                  </summary>
-                  <p className="mt-4 text-gray-700">
-                    Para mim, um projeto bem-sucedido é aquele que resolve o problema do usuário, atinge os objetivos de negócio e tem alta qualidade técnica. Meço o sucesso através do impacto gerado e de métricas como a satisfação do usuário, resultados de negócio (KPIs) e a performance da aplicação.
-                  </p>
-                </details>
+              <details className="bg-white rounded-lg p-6 cursor-pointer group">
+                <summary className="font-bold text-lg list-none flex justify-between items-center">
+                  Você é designer ou desenvolvedor?
+                  <span className="text-2xl transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
+                </summary>
+                <p className="mt-4 text-gray-700">
+                  Sou um desenvolvedor com especialização em full-stack, mas meu maior diferencial é meu background em design UI/UX. Isso me dá uma visão mais técnica para o desenvolvimento front-end, pois consigo entender a lógica por trás da experiência do usuário.
+                </p>
+              </details>
+              <details className="bg-white rounded-lg p-6 cursor-pointer group">
+                <summary className="font-bold text-lg list-none flex justify-between items-center">
+                  Como você gerencia um projeto desde a concepção (design UI/UX) até a implementação (desenvolvimento e deploy)?
+                  <span className="text-2xl transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
+                </summary>
+                <p className="mt-4 text-gray-700">
+                  Eu gerencio o projeto de ponta a ponta, unindo a visão de design à execução técnica. Começo com o levantamento de requisitos e a criação do design (UI/UX), depois defino a arquitetura e desenvolvo banco de dados, back-end e o front-end. Por fim, executo o deploy e garanto a manutenção, entregando uma solução coesa e completa.
+                </p>  
+              </details>
+              <details className="bg-white rounded-lg p-6 cursor-pointer group">
+                <summary className="font-bold text-lg list-none flex justify-between items-center">
+                  Como você lida com mudanças de escopo durante um projeto?
+                  <span className="text-2xl transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
+                </summary>
+                <p className="mt-4 text-gray-700">
+                  Eu lido com mudanças de forma proativa. Analiso o impacto no projeto, discuto as opções com o desenvolvedor parceiro (quando tem), levo até o cliente e, em seguida, formalizo a decisão para garantir que as expectativas estejam sempre alinhadas.
+                </p>
+              </details>
+              <details className="bg-white rounded-lg p-6 cursor-pointer group">
+                <summary className="font-bold text-lg list-none flex justify-between items-center">
+                  O que você considera um projeto bem-sucedido e como você mede o sucesso?
+                  <span className="text-2xl transition-transform group-open:rotate-90" aria-hidden="true">▸</span>
+                </summary>
+                <p className="mt-4 text-gray-700">
+                  Para mim, um projeto bem-sucedido é aquele que resolve o problema do usuário, atinge os objetivos de negócio e tem alta qualidade técnica. Meço o sucesso através do impacto gerado e de métricas como a satisfação do usuário, resultados de negócio (KPIs) e a performance da aplicação.
+                </p>
+              </details>
             </div>
           </div>
           <div className="flex flex-row w-full items-center">
             <div className="flex flex-col gap-4 w-full">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-cover bg-center bg-black" style={{ backgroundImage: "url('/personal-image.png')" }} />
-                <p className="text-white text-4xl font-semibold">Let's build it together.</p>
+                <div className="w-16 h-16 rounded-full bg-cover bg-center bg-black" style={{ backgroundImage: "url('/personal-image.png')" }} aria-label="Foto de Victor Hugo" />
+                <p className="text-white text-4xl font-semibold">Vamos construir juntos.</p>
               </div>
               <div className="flex gap-4">
-                <button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded flex items-center gap-3 hover:bg-white hover:text-black transition">
-                  My LinkedIn
-                  <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
+                <button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded flex items-center gap-3 hover:bg-white hover:text-black transition group" aria-label="Visitar meu perfil do LinkedIn">
+                  Meu LinkedIn
+                  <img src="/icons/linkedin.svg" alt="" className="w-6 h-6 brightness-0 invert group-hover:invert-0" aria-hidden="true" />
                 </button>
-                <button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded flex items-center gap-3 hover:bg-white hover:text-black transition">
-                  Download my resume
-                  <img src="/icons/github.svg" alt="Github" className="w-6 h-6" />
+                <button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded flex items-center gap-3 hover:bg-white hover:text-black transition group" aria-label="Baixar meu currículo">
+                  Baixar meu currículo
+                  <img src="/icons/github.svg" alt="" className="w-6 h-6 brightness-0 invert group-hover:invert-0" aria-hidden="true" />
                 </button>
               </div>
             </div>
             <div className="bg-gradient-to-br from-[#B7047E] to-[#510238] rounded-lg py-20 text-center w-full border-2 border-white">
-              <h3 className="text-white text-4xl font-bold mb-2">Try me out, risk free!</h3>
-              <p className="text-white text-lg">Let's build something great together</p>
+              <h3 className="text-white text-4xl font-bold mb-2">Experimente sem riscos!</h3>
+              <p className="text-white text-lg">Vamos construir algo incrível juntos</p>
             </div>
           </div>
         </div>
