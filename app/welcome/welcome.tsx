@@ -1,15 +1,16 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { PersonalImage } from "~/components/personal-image";
-import Plasma from "~/components/Plasma";
 import { LoadingScreen } from "~/components/loading-screen";
 import { AnimatedText } from "~/components/animated-text";
 import { gsap } from "gsap";
 import { FloatingIcons } from "~/components/floating-icons";
 import SpotlightCard from "~/components/SpotlightCard";
 import ScrollReveal from "~/components/ScrollReveal";
-import LightPillar from "~/components/LightPillar";
 import ProjectCard from "~/components/ProjectCard";
-import Waves from "~/components/Waves";
+
+const Plasma = lazy(() => import("~/components/Plasma"));
+const LightPillar = lazy(() => import("~/components/LightPillar"));
+const Waves = lazy(() => import("~/components/Waves"));
 
 export function Welcome() {
   const [showLoading, setShowLoading] = useState(true);
@@ -40,14 +41,16 @@ export function Welcome() {
   return (
     <main className="w-full h-full bg-black overflow-hidden">
       <div className="flex relative h-[100dvh] overflow-hidden">
-        <Plasma
-          color="#b7047e"
-          speed={0.2}
-          direction="forward"
-          scale={2.2}
-          opacity={1}
-          mouseInteractive={false}
-        />
+        <Suspense fallback={<div className="plasma-container" style={{ background: 'radial-gradient(circle, rgba(183,4,126,0.2) 0%, rgba(0,0,0,1) 70%)' }} />}>
+          <Plasma
+            color="#b7047e"
+            speed={0.2}
+            direction="forward"
+            scale={2.2}
+            opacity={1}
+            mouseInteractive={false}
+          />
+        </Suspense>
         <div className="absolute flex flex-col z-0 h-full w-full items-center justify-between mt-20">
           <div className="flex flex-col items-center justify-top">
             {showContent && (
@@ -117,20 +120,22 @@ export function Welcome() {
         </div>
       </div>
       <div className="flex flex-col justify-top items-center relative py-20 overflow-hidden">
-        <LightPillar
-          topColor="#ec4899"
-          bottomColor="#3b82f6"
-          intensity={1}
-          rotationSpeed={0.3}
-          glowAmount={0.002}
-          pillarWidth={3}
-          pillarHeight={0.1}
-          noiseIntensity={0.5}
-          pillarRotation={25}
-          interactive={false}
-          mixBlendMode="screen"
-          quality="high"
-        />
+        <Suspense fallback={<div />}>
+          <LightPillar
+            topColor="#ec4899"
+            bottomColor="#3b82f6"
+            intensity={1}
+            rotationSpeed={0.3}
+            glowAmount={0.002}
+            pillarWidth={3}
+            pillarHeight={0.1}
+            noiseIntensity={0.5}
+            pillarRotation={25}
+            interactive={false}
+            mixBlendMode="screen"
+            quality="high"
+          />
+        </Suspense>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none z-0" />
         <div className="flex flex-col gap-10 h-full w-full items-center justify-top px-60 relative z-10">
           <h1 className="text-white text-4xl">Projetos</h1>
@@ -193,19 +198,21 @@ export function Welcome() {
         </div>
       </div>
       <div className="flex relative overflow-hidden">
-        <Waves
-          lineColor="#b70a7e"
-          backgroundColor="transparent"
-          waveSpeedX={0.0125}
-          waveSpeedY={0.01}
-          waveAmpX={40}
-          waveAmpY={20}
-          friction={0.9}
-          tension={0.05}
-          maxCursorMove={120}
-          xGap={12}
-          yGap={36}
-        />
+        <Suspense fallback={<div />}>
+          <Waves
+            lineColor="#b70a7e"
+            backgroundColor="transparent"
+            waveSpeedX={0.0125}
+            waveSpeedY={0.01}
+            waveAmpX={40}
+            waveAmpY={20}
+            friction={0.9}
+            tension={0.05}
+            maxCursorMove={120}
+            xGap={12}
+            yGap={36}
+          />
+        </Suspense>
         <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent pointer-events-none z-10" />
         <div className="relative z-20 w-full flex p-40 gap-10 flex flex-col">
           <div className="flex flex-row w-full">
