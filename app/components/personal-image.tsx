@@ -29,7 +29,7 @@ return (
             bottom: '0',
             zIndex: 0,
             width: '25vw',
-            aspectRatio: '1 / 1',
+            aspectRatio: '2 / 3',
             overflow: 'hidden',
             backgroundImage: "url('/personal-image.png')",
             backgroundSize: 'cover',
