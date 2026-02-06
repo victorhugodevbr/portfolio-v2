@@ -138,7 +138,7 @@ const ProjectCard = memo(function ProjectCard({
       <img
         src={phoneImage}
         alt="Project Preview"
-        className="relative w-[27.6vw] h-[59.07vh]"
+        className="hidden lg:block relative w-full h-[59.07vh] ml-10"
         loading="lazy"
       />
     </div>

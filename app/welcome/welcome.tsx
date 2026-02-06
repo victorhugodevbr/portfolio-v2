@@ -101,26 +101,26 @@ export function Welcome() {
             mouseInteractive={false}
           />
         </Suspense>
-        <div className="absolute flex flex-col z-0 h-full w-full items-center justify-between mt-20">
+        <div className="absolute flex flex-col px-10 z-0 h-full w-full items-center justify-between mt-20">
           <div className="flex flex-col items-center justify-top">
             {showContent && (
-              <>
-                <AnimatedText
-                  text="Olá, eu sou"
-                  className="font-bold text-white text-[clamp(40px,3.75vw,72px)] drop-shadow-[0_0_clamp(6px,1vw,12px)_white]"
-                  delay={0.3}
-                />
-                <AnimatedText
-                  text="Victor Hugo"
-                  className="font-bold text-white text-[clamp(60px,5vw,96px)] drop-shadow-[0_0_clamp(8px,1.5vw,16px)_white]"
-                  delay={0.9}
-                />
-                <AnimatedText
-                  text="Desenvolvedor Full Stack / Designer UI & UX"
-                  className="font-bold text-white text-[clamp(24px,2.1vw,40px)] drop-shadow-[0_0_clamp(2px,0.5vw,4px)_white]"
-                  delay={1.5}
-                />
-              </>
+                <>
+                  <AnimatedText
+                    text="Olá, eu sou"
+                    className="font-bold text-white text-[clamp(35px,3.75vw,72px)] drop-shadow-[0_0_clamp(6px,1vw,12px)_white] text-center"
+                    delay={0.3}
+                  />
+                  <AnimatedText
+                    text="Victor Hugo"
+                    className="font-bold text-white text-[clamp(50px,5vw,96px)] drop-shadow-[0_0_clamp(8px,1.5vw,16px)_white] text-center whitespace-nowrap"
+                    delay={0.9}
+                  />
+                  <AnimatedText
+                    text="Desenvolvedor Full Stack / Designer UI & UX"
+                    className="font-bold text-white text-[clamp(24px,2.1vw,40px)] drop-shadow-[0_0_clamp(2px,0.5vw,4px)_white] text-center"
+                    delay={1.5}
+                  />
+                </>
             )}
           </div>
           <div ref={imageRef} style={{ transform: 'translateY(100%)', opacity: 0 }}>
@@ -128,19 +128,25 @@ export function Welcome() {
           </div>
         </div>
       </div>
-      <div className="flex relative h-[100dvh] overflow-hidden">
-        <FloatingIcons />
-        <div className="relative z-10 w-full p-20 gap-10 flex flex-col">
+      <div className="flex relative min-h-[100dvh] overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <FloatingIcons />
+        </div>
+        <div className="relative z-10 w-full p-20 gap-10 flex flex-col md:items-center md:justify-center">
           <ScrollReveal y={80} duration={0.8}>
-            <h1 className="text-white text-4xl">Sou especializado em</h1>
+            <h1 className="text-white text-4xl flex flex-col sm:flex-row sm:flex-wrap sm:gap-2">
+              <span>Sou</span>
+              <span className="sm:mx-0 mx-auto">especializado</span>
+              <span className="sm:ml-0 ml-auto">em</span>
+            </h1>
           </ScrollReveal>
           
           <ScrollReveal y={100} duration={1} delay={0.1}>
             <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
               <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-3xl font-bold">Desenvolvimento Frontend</h2>
+                <h2 className="text-2xl md:text-3xl font-bold">Desenvolvimento Frontend</h2>
                 <p className="text-lg leading-relaxed">
-                  Implementação de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.
+              Implementação de interfaces modernas com Flutter, React e Next.js, priorizando acessibilidade, responsividade e design system para garantir consistência e usabilidade em escala.
                 </p>
               </div>
             </SpotlightCard>
@@ -149,9 +155,9 @@ export function Welcome() {
           <ScrollReveal y={100} duration={1} delay={0.2}>
             <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(32, 0, 230, 0.37)">
               <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-3xl font-bold">Backend & Banco de Dados</h2>
+                <h2 className="text-2xl md:text-3xl font-bold">Backend & Banco de Dados</h2>
                 <p className="text-lg leading-relaxed">
-                  Estruturo aplicações com arquitetura escalável, seguindo princípios de Clean Code, utilizando Prisma ORM e testes automatizados para garantir integrações confiáveis e manutenção eficiente.
+              Estruturo aplicações com arquitetura escalável, seguindo princípios de Clean Code, utilizando Prisma ORM e testes automatizados para garantir integrações confiáveis e manutenção eficiente.
                 </p>
               </div>
             </SpotlightCard>
@@ -160,9 +166,9 @@ export function Welcome() {
           <ScrollReveal y={30} duration={1} delay={0.3}>
             <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(183, 4, 126, 0.37)">
               <div className="flex flex-col gap-2 text-white p-6 md:p-8 lg:p-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-3xl font-bold">Designer UI/UX</h2>
+                <h2 className="text-2xl md:text-3xl font-bold">Designer UI/UX</h2>
                 <p className="text-lg leading-relaxed">
-                  Desenho experiências centradas no usuário com prototipação ágil, aplicação das heurísticas de Nielsen, design system consistente e foco em responsividade mobile-first.
+              Desenho experiências centradas no usuário com prototipação ágil, aplicação das heurísticas de Nielsen, design system consistente e foco em responsividade mobile-first.
                 </p>
               </div>
             </SpotlightCard>
@@ -174,7 +180,7 @@ export function Welcome() {
         className="relative"
         style={{ height: `${totalProjects * 100}vh` }}
       >
-        <div className="sticky top-0 h-screen flex flex-col px-60 items-center justify-center overflow-hidden">
+        <div className="sticky top-0 h-screen flex flex-col px-20 lg:px-60 items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Suspense fallback={<div className="w-full h-full" style={{ minHeight: '400px' }} />}>
               <LightPillar
