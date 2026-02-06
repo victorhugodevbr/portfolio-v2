@@ -25,6 +25,7 @@ interface ProjectCardProps {
   phoneImage: string;
   buttonColor: string;
   buttonTextColor: string;
+  onClick?: () => void;
 }
 
 const ProjectCard = memo(function ProjectCard({
@@ -41,6 +42,7 @@ const ProjectCard = memo(function ProjectCard({
   phoneImage,
   buttonColor,
   buttonTextColor,
+  onClick,
 }: ProjectCardProps) {
   const renderTitle = useMemo(() => {
     if (typeof title === 'string') {
@@ -93,8 +95,9 @@ const ProjectCard = memo(function ProjectCard({
 
   return (
     <div
-      className="relative flex flex-row gap-2 p-6 md:p-8 lg:p-20 w-full rounded-3xl overflow-hidden transition-transform duration-300 ease-out hover:scale-105 group"
+      className={`relative flex flex-row gap-2 p-6 md:p-8 lg:p-20 w-full rounded-3xl overflow-hidden transition-transform duration-300 ease-out ${onClick ? 'hover:scale-105 cursor-pointer' : ''} group`}
       style={{ backgroundColor, willChange: 'transform' }}
+      onClick={onClick}
     >
       <div
         className="absolute"
@@ -120,15 +123,17 @@ const ProjectCard = memo(function ProjectCard({
         <p className="relative text-[clamp(14px,1.25vw,24px)] leading-[1.2] font-bold text-white">
           {description}
         </p>
-        <button
-          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-8 py-3 font-bold rounded-lg hover:bg-gray-100 w-fit"
-          style={{
-            backgroundColor: buttonColor,
-            color: buttonTextColor,
-          }}
-        >
-          Ver mais
-        </button>
+        {onClick && (
+          <button
+            className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-8 py-3 font-bold rounded-lg hover:bg-gray-100 w-fit"
+            style={{
+              backgroundColor: buttonColor,
+              color: buttonTextColor,
+            }}
+          >
+            Ver mais
+          </button>
+        )}
       </div>
       <img
         src={phoneImage}
