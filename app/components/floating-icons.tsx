@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { motion } from 'framer-motion'
 
 type FloatingIconProps = {
@@ -9,7 +9,7 @@ type FloatingIconProps = {
   y: number
   rotation: number
 }
-function FloatingIcon({
+const FloatingIcon = memo(function FloatingIcon({
   children,
   delay,
   duration,
@@ -23,6 +23,7 @@ function FloatingIcon({
       style={{
         left: `${x}%`,
         top: `${y}%`,
+        willChange: 'transform',
       }}
       initial={{
         y: 0,
@@ -48,43 +49,49 @@ function FloatingIcon({
       </div>
     </motion.div>
   )
-}
+});
 
-function FigmaIcon() {
+const FigmaIcon = memo(() => {
   return (
-    <img src="/figma-icon.png" alt="Figma" className='rounded-sm' />
+    <img src="/figma-icon.png" alt="Figma" className='rounded-sm' loading="lazy" />
   )
-}
-function PostgreSQLIcon() {
+});
+
+const PostgreSQLIcon = memo(() => {
   return (
-    <img src="/postgresql-icon.png" alt="PostgreSQL" className='rounded-sm' />
+    <img src="/postgresql-icon.png" alt="PostgreSQL" className='rounded-sm' loading="lazy" />
   )
-}
-function ReactIcon() {
+});
+
+const ReactIcon = memo(() => {
   return (
-    <img src="/react-icon.png" alt="React" className='rounded-sm' />
+    <img src="/react-icon.png" alt="React" className='rounded-sm' loading="lazy" />
   )
-}
-function NestJSIcon() {
+});
+
+const NestJSIcon = memo(() => {
   return (
-    <img src="/nestjs-icon.png" alt="NestJS" className='rounded-sm' />
+    <img src="/nestjs-icon.png" alt="NestJS" className='rounded-sm' loading="lazy" />
   )
-}
-function PhotoshopIcon() {
+});
+
+const PhotoshopIcon = memo(() => {
   return (
-    <img src="/photoshop-icon.png" alt="Photoshop" className='rounded-sm' />
+    <img src="/photoshop-icon.png" alt="Photoshop" className='rounded-sm' loading="lazy" />
   )
-}
-function TypeScriptIcon() {
+});
+
+const TypeScriptIcon = memo(() => {
   return (
-    <img src="/ts-icon.png" alt="TypeScript" className='rounded-sm' />
+    <img src="/ts-icon.png" alt="TypeScript" className='rounded-sm' loading="lazy" />
   )
-}
-function FlutterIcon() {
+});
+
+const FlutterIcon = memo(() => {
   return (
-    <img src="/flutter-icon.png" alt="Flutter" className='rounded-sm' />
+    <img src="/flutter-icon.png" alt="Flutter" className='rounded-sm' loading="lazy" />
   )
-}
+});
 export function FloatingIcons() {
   const icons = [
     {

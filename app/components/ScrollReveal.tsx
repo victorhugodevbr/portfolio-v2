@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, type ReactNode } from 'react';
+import React, { useEffect, useRef, type ReactNode, memo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -50,7 +50,12 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
           trigger: el,
           start: scrollStart,
           end: scrollEnd,
-          scrub: true
+          scrub: true,
+          onLeave: () => gsap.set(el, { willChange: 'auto' }),
+          onEnterBack: () => gsap.set(el, { willChange: 'opacity, transform' })
+        },
+        onComplete: () => {
+          gsap.set(el, { willChange: 'auto' });
         }
       }
     );
@@ -71,4 +76,4 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   );
 };
 
-export default ScrollReveal;
+export default memo(ScrollReveal);

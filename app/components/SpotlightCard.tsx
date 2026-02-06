@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, memo, useCallback } from 'react';
 
 interface Position {
   x: number;
@@ -10,7 +10,7 @@ interface SpotlightCardProps extends React.PropsWithChildren {
   spotlightColor?: `rgba(${number}, ${number}, ${number}, ${number})`;
 }
 
-const SpotlightCard: React.FC<SpotlightCardProps> = ({
+const SpotlightCard: React.FC<SpotlightCardProps> = memo(({
   children,
   className = '',
   spotlightColor = '#ffffff40'
@@ -19,31 +19,43 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState<number>(0);
+  const rafRef = useRef<number | null>(null);
 
-  const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = e => {
+  const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = useCallback((e) => {
     if (!divRef.current || isFocused) return;
 
-    const rect = divRef.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
+    // Throttle usando RAF
+    if (rafRef.current !== null) return;
+    
+    rafRef.current = requestAnimationFrame(() => {
+      if (!divRef.current) return;
+      const rect = divRef.current.getBoundingClientRect();
+      setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+      rafRef.current = null;
+    });
+  }, [isFocused]);
 
-  const handleFocus = () => {
+  const handleFocus = useCallback(() => {
     setIsFocused(true);
     setOpacity(0.6);
-  };
+  }, []);
 
-  const handleBlur = () => {
+  const handleBlur = useCallback(() => {
     setIsFocused(false);
     setOpacity(0);
-  };
+  }, []);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     setOpacity(0.6);
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setOpacity(0);
-  };
+    if (rafRef.current !== null) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
+  }, []);
 
   return (
     <div
@@ -69,7 +81,8 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
           className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
           style={{
             opacity,
-            background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`
+            background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,
+            willChange: opacity > 0 ? 'opacity' : 'auto'
           }}
         />
         {children}
@@ -97,6 +110,6 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       `}</style>
     </div>
   );
-};
+});
 
 export default SpotlightCard;

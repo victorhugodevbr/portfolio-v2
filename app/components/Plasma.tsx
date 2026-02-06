@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, memo, useCallback } from 'react';
 import { Renderer, Program, Mesh, Triangle } from 'ogl';
 import './Plasma.css';
 
@@ -113,7 +113,7 @@ export const Plasma: React.FC<PlasmaProps> = ({
       webgl: 2,
       alpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2)
+      dpr: Math.min(window.devicePixelRatio || 1, 1.5)
     });
     const gl = renderer.gl;
     const canvas = gl.canvas;
@@ -143,8 +143,15 @@ export const Plasma: React.FC<PlasmaProps> = ({
 
     const mesh = new Mesh(gl, { geometry, program });
 
+    let lastMouseUpdate = 0;
+    const MOUSE_THROTTLE = 16; // ~60fps
+
     const handleMouseMove = (e: MouseEvent) => {
       if (!mouseInteractive) return;
+      const now = performance.now();
+      if (now - lastMouseUpdate < MOUSE_THROTTLE) return;
+      lastMouseUpdate = now;
+      
       const rect = containerRef.current!.getBoundingClientRect();
       mousePos.current.x = e.clientX - rect.left;
       mousePos.current.y = e.clientY - rect.top;
@@ -154,7 +161,7 @@ export const Plasma: React.FC<PlasmaProps> = ({
     };
 
     if (mouseInteractive) {
-      containerEl.addEventListener('mousemove', handleMouseMove);
+      containerEl.addEventListener('mousemove', handleMouseMove, { passive: true });
     }
 
     const setSize = () => {
@@ -206,7 +213,7 @@ export const Plasma: React.FC<PlasmaProps> = ({
     };
   }, [color, speed, direction, scale, opacity, mouseInteractive]);
 
-  return <div ref={containerRef} className="plasma-container" />;
+  return <div ref={containerRef} className="plasma-container" style={{ willChange: 'transform' }} />;
 };
 
-export default Plasma;
+export default memo(Plasma);

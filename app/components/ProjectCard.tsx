@@ -1,3 +1,5 @@
+import { memo, useMemo } from 'react';
+
 interface ProjectCardProps {
   backgroundColor: string;
   logo: string;
@@ -25,7 +27,7 @@ interface ProjectCardProps {
   buttonTextColor: string;
 }
 
-export default function ProjectCard({
+const ProjectCard = memo(function ProjectCard({
   backgroundColor,
   logo,
   logoOpacity = 0.2,
@@ -40,7 +42,7 @@ export default function ProjectCard({
   buttonColor,
   buttonTextColor,
 }: ProjectCardProps) {
-  const renderTitle = () => {
+  const renderTitle = useMemo(() => {
     if (typeof title === 'string') {
       return (
         <h2
@@ -87,12 +89,12 @@ export default function ProjectCard({
         )}
       </div>
     );
-  };
+  }, [title, titleFont, titleWeight]);
 
   return (
     <div
       className="relative flex flex-row gap-2 p-6 md:p-8 lg:p-20 w-full rounded-3xl overflow-hidden transition-transform duration-300 ease-out hover:scale-105 group"
-      style={{ backgroundColor }}
+      style={{ backgroundColor, willChange: 'transform' }}
     >
       <div
         className="absolute"
@@ -106,6 +108,7 @@ export default function ProjectCard({
           src={logo}
           alt="Project Logo"
           className="w-full h-full object-contain"
+          loading="lazy"
           style={{
             opacity: logoOpacity,
             transform: `rotate(${logoRotation}deg)`,
@@ -113,7 +116,7 @@ export default function ProjectCard({
         />
       </div>
       <div className="relative flex flex-col justify-center gap-8">
-        {renderTitle()}
+        {renderTitle}
         <p className="relative text-[clamp(14px,1.25vw,24px)] leading-[1.2] font-bold text-white">
           {description}
         </p>
@@ -131,7 +134,10 @@ export default function ProjectCard({
         src={phoneImage}
         alt="Project Preview"
         className="relative w-[27.6vw] h-[59.07vh]"
+        loading="lazy"
       />
     </div>
   );
-}
+});
+
+export default ProjectCard;

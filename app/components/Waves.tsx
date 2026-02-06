@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, type CSSProperties } from 'react';
+import React, { useRef, useEffect, type CSSProperties, memo } from 'react';
 
 class Grad {
   x: number;
@@ -337,7 +337,13 @@ const Waves: React.FC<WavesProps> = ({
       setSize();
       setLines();
     }
+    let lastMouseMoveTime = 0;
+    const MOUSE_THROTTLE = 16; // ~60fps
+    
     function onMouseMove(e: MouseEvent) {
+      const now = performance.now();
+      if (now - lastMouseMoveTime < MOUSE_THROTTLE) return;
+      lastMouseMoveTime = now;
       updateMouse(e.clientX, e.clientY);
     }
     function onTouchMove(e: TouchEvent) {
@@ -361,9 +367,9 @@ const Waves: React.FC<WavesProps> = ({
     setSize();
     setLines();
     frameIdRef.current = requestAnimationFrame(tick);
-    window.addEventListener('resize', onResize);
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('touchmove', onTouchMove, { passive: false });
+    window.addEventListener('resize', onResize, { passive: true });
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    window.addEventListener('touchmove', onTouchMove, { passive: true });
 
     return () => {
       window.removeEventListener('resize', onResize);
@@ -396,4 +402,4 @@ const Waves: React.FC<WavesProps> = ({
   );
 };
 
-export default Waves;
+export default memo(Waves);

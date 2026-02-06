@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, memo } from 'react';
 import * as THREE from 'three';
 
 interface LightPillarProps {
@@ -416,8 +416,8 @@ const LightPillar: React.FC<LightPillarProps> = ({
   }
 
   return (
-    <div ref={containerRef} className={`w-full h-full absolute top-0 left-0 ${className}`} style={{ mixBlendMode }} />
+    <div ref={containerRef} className={`w-full h-full absolute top-0 left-0 ${className}`} style={{ mixBlendMode, willChange: 'transform' }} />
   );
 };
 
-export default LightPillar;
+export default memo(LightPillar);

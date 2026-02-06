@@ -25,6 +25,10 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap",
   },
+  // Preload imagens críticas acima do fold
+  { rel: "preload", href: "/personal-image.png", as: "image" },
+  { rel: "prefetch", href: "/rubcube-logo.png", as: "image" },
+  { rel: "prefetch", href: "/rubbank-cellphone.png", as: "image" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

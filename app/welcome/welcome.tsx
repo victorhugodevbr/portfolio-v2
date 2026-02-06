@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { useState, useEffect, useRef, lazy, Suspense, memo } from "react";
 import { PersonalImage } from "~/components/personal-image";
 import { LoadingScreen } from "~/components/loading-screen";
 import { AnimatedText } from "~/components/animated-text";
@@ -12,10 +12,33 @@ const Plasma = lazy(() => import("~/components/Plasma"));
 const LightPillar = lazy(() => import("~/components/LightPillar"));
 const Waves = lazy(() => import("~/components/Waves"));
 
+const preloadImages = [
+  '/personal-image.png',
+  '/rubcube-logo.png',
+  '/rubbank-cellphone.png',
+  '/maranata-logo.png',
+  '/maranata-cellphone.png',
+  '/brasilcard-logo.png',
+  '/brasilcard-cellphone.png',
+];
+
+const preloadImage = (src: string) => {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = resolve;
+    img.onerror = reject;
+    img.src = src;
+  });
+};
+
 export function Welcome() {
   const [showLoading, setShowLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    Promise.all(preloadImages.map(src => preloadImage(src).catch(() => {})));
+  }, []);
 
   useEffect(() => {
     if (!showLoading && showContent && imageRef.current) {
@@ -41,7 +64,7 @@ export function Welcome() {
   return (
     <main className="w-full h-full bg-black overflow-hidden">
       <div className="flex relative h-[100dvh] overflow-hidden">
-        <Suspense fallback={<div className="plasma-container" style={{ background: 'radial-gradient(circle, rgba(183,4,126,0.2) 0%, rgba(0,0,0,1) 70%)' }} />}>
+        <Suspense fallback={<div className="plasma-container" style={{ background: 'radial-gradient(circle, rgba(183,4,126,0.15) 0%, rgba(0,0,0,1) 70%)', willChange: 'transform' }} />}>
           <Plasma
             color="#b7047e"
             speed={0.2}
@@ -120,7 +143,7 @@ export function Welcome() {
         </div>
       </div>
       <div className="flex flex-col justify-top items-center relative py-20 overflow-hidden">
-        <Suspense fallback={<div />}>
+        <Suspense fallback={<div className="w-full h-full" style={{ minHeight: '400px' }} />}>
           <LightPillar
             topColor="#ec4899"
             bottomColor="#3b82f6"
@@ -198,7 +221,7 @@ export function Welcome() {
         </div>
       </div>
       <div className="flex relative overflow-hidden">
-        <Suspense fallback={<div />}>
+        <Suspense fallback={<div className="w-full h-full" style={{ minHeight: '600px', background: 'transparent' }} />}>
           <Waves
             lineColor="#b70a7e"
             backgroundColor="transparent"
